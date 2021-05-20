@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" href="../static/logo/vix.png">
+
+    <style>
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            }
+
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+
+        .card-img-top {
+          object-fit: cover;
+          object-position: center;
+          /* height: 650px;
+          width: 540px; */
+        }
+
+        body {
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 25px;
+          background-image: url("../static/screenshots/jumbo.jpg");
+          padding: 30px;
+          line-height: 1.6;
+        }
+
+        h1 {
+          /* text-align: center; */
+          margin-bottom: 30px;
+          border-bottom: 1px #ccc solid;
+        }
+
+        h3 {
+          margin-top: 20px;
+        }
+
+        input[type="text"] {
+          border: 1px #ccc solid;
+          width: 300px;
+          padding: 4px;
+          height: 35px;
+          margin-top: 20px;
+        }
+
+        .card {
+          margin: 20px 0;
+          border: #ccc 1px solid;
+          padding: 20px
+          object-fit: cover;
+        }
+
+    </style>
+
+    <title>Vicks YouTube Commnets</title>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+        <style>
+                .jumbotron-fluid {
+                    background: url("../static/screenshots/back.jpg") center center / cover no-repeat;
+                }
+        </style>
+
+  </head>
+  <body>
+
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a style="color:green;" class="navbar-brand" href="{{url_for('ytc')}}"><strong>YouTube Comments</strong></a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+              <li class="nav-item dropdown">
+                <a style="color:red;" class="nav-link dropdown-toggle" href="{{url_for('ytc')}}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <strong>Services</strong>
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a style="color:blue;" class="dropdown-item" href="{{url_for('ytc')}}"><strong>QR-Code</strong></a>
+                </div>
+              </li>
+
+            </ul>
+
+          </div>
+        </nav>
+
+      </div>
+      <br>
+
+      <div class="jumbotron">
+        <div class="container">
+
+          <center>
+            <div class="class="video-container"">
+              <iframe
+                      src="https://www.youtube.com/embed/3xDOjHZa5bo"
+                      frameborder="0"
+                      allow="autoplay; encrypted-media" allowfullscreen>
+              </iframe>
+            </div>
+          </center>
+
+        </div>
+      </div>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+  </body>
+</html>
