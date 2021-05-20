@@ -162,7 +162,7 @@ def converted_report():
 def ytc():
     from vicks import ytc
 
-    vid = 'LjXbmAmXxfY'
+    vid = '5bthVn83mhc'
     dict = ytc.comments(vid)
 
     return render_template("ytc.html",
