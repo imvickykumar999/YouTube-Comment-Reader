@@ -14,7 +14,7 @@
 ![ss5](https://github.com/imvickykumar999/YouTube-Comment-Reader/blob/main/static/screenshots/ss5.jpg?raw=true)
 
 ## [Certificate](https://vixtest.herokuapp.com/report)...
-![ss8](https://github.com/imvickykumar999/YouTube-Comment-Reader/blob/main/static/screenshots/ss8.jpg?raw=true)
+[![ss8](https://github.com/imvickykumar999/YouTube-Comment-Reader/blob/main/static/screenshots/ss8.jpg?raw=true)](https://vixtest.herokuapp.com/Certificate.pdf)
 ![ss9](https://github.com/imvickykumar999/YouTube-Comment-Reader/blob/main/static/screenshots/ss9.jpg?raw=true)
 ![ss10](https://github.com/imvickykumar999/YouTube-Comment-Reader/blob/main/static/screenshots/ss10.jpg?raw=true)
 ![ss6](https://github.com/imvickykumar999/YouTube-Comment-Reader/blob/main/static/screenshots/ss6.jpg?raw=true)
