@@ -21,7 +21,7 @@ def convert():
         pdf.cell(200, 10, txt = x, ln = 1)
 
     # save the pdf with name .pdf
-    pdf.output("myfile.pdf")
+    pdf.output("Certificate.pdf")
 
     # uncomment to ...password protect
     # from vicks import encrypt as enc

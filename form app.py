@@ -18,9 +18,7 @@ def allowed_file(filename):
 def send_image(filename):
     return send_from_directory("", filename)
 
-# return redirect(f'/{loc}')
-
-@app.route("/")
+@app.route("/report")
 def report():
     return render_template('form.html')
 
