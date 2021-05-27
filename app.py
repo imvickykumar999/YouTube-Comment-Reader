@@ -158,6 +158,39 @@ def converted_report():
     ld_returnamount = ld_returnamount
                            )
 
+# ================================================
+
+@app.route("/firechat")
+def firechat():
+
+    from multivicks import crud
+    obj1 = crud.vicks('@Hey_Vicks')
+
+    data = obj1.pull('Group/Chat')
+    return render_template("firechat.html",
+                           data = data,
+                           )
+
+
+@app.route('/converted_firechat', methods=['POST'])
+def converted_firechat():
+    from multivicks import crud
+
+    credentials = request.form['credentials']
+    person = request.form['person']
+    message = request.form['message']
+
+    # print(credentials)
+    obj1 = crud.vicks(credentials, name = person)
+    obj1.push(message)
+
+    data = obj1.pull('Group/Chat')
+    return render_template("firechat.html",
+                           data = data,
+                           )
+
+# ================================================
+
 @app.route("/")
 def vickstube():
     from vicks import ytc
@@ -181,6 +214,7 @@ def converted_vickstube():
     elif s[2] == 'youtu.be':
         vid = s[3].split('?')[0]
     else:
+        vid = 'Cpc_rHf1U6g'
         print("Sorry... Code couldn't be extracted !!!")
 
     dict = ytc.comments(vid)
