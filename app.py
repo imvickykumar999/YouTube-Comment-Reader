@@ -178,13 +178,20 @@ def converted_firechat():
 
     credentials = request.form['credentials']
     person = request.form['person']
+
+    if person == '':
+        obj1 = crud.vicks(credentials)
+    else:
+        # print(credentials)
+        obj1 = crud.vicks(credentials, name = person)
+
     message = request.form['message']
+    if message == '':
+        obj1.push()
+    else:
+        obj1.push(message)
 
-    # print(credentials)
-    obj1 = crud.vicks(credentials, name = person)
-    obj1.push(message)
-
-    data = obj1.pull('Group/Chat')
+    data = obj1.pull()
     return render_template("firechat.html",
                            data = data,
                            )
