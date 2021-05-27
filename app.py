@@ -159,7 +159,7 @@ def converted_report():
                            )
 
 @app.route("/")
-def ytc():
+def vickstube():
     from vicks import ytc
 
     vid = '5bthVn83mhc'
@@ -169,8 +169,8 @@ def ytc():
                             dict=dict,
                             vid=vid)
 
-@app.route('/converted_ytc', methods=['POST'])
-def converted_ytc():
+@app.route('/converted_vickstube', methods=['POST'])
+def converted_vickstube():
     from vicks import ytc
 
     url = request.form['ytc']
