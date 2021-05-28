@@ -52,21 +52,21 @@ class vicks:
             return error
 
     def push(self, data = None,
-                   child = None):
+                   child = 'Group/Chat'):
 
         if self.password == '@Hey_Vicks':
             # dt = datetime.now()
             # d = str(dt).split()[0]
             # t = str(dt).split()[1].split('.')[0]
 
-            if child == None:
-                child = f"Group/Chat/@{self.name}"
+            # if child == None:
+            #     child = f"Group/Chat"
                 # child = f"Group/Chat/{d}/{t}@{self.name}"
 
             if data == None:
                 data = f"...hi, I am {self.name}"
 
-            self.firebase_obj.post(child, data)
+            self.firebase_obj.post(child, self.name + ' => ' + data)
             # self.firebase_obj.put('/', child, data)
             # return self.pull(child = '/')
 
