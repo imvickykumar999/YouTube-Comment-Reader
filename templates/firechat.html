@@ -65,25 +65,25 @@
 
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
-        <div class="alert alert-danger" role="alert">
           <center>
             <h3>
 
-              <p>
-                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                  Message
-                </a>
-              </p>
+              {% for key, values in data.items() %}
+              <div class="alert alert-primary" role="alert">
 
-              <div class="collapse" id="collapseExample">
-                <div class="card card-body">
-                  {{data}}
+                <div class="alert alert-danger" role="alert">
+                  {{values.split(' => ')[0]}}
                 </div>
+
+                <div class="alert alert-warning" role="alert">
+                  {{values.split(' => ')[1]}}
+                </div>
+
               </div>
+              {% endfor %}
 
             </h3>
           </center>
-        </div>
       </div>
     </div>
 
