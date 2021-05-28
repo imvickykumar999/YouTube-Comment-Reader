@@ -66,7 +66,8 @@ class vicks:
             if data == None:
                 data = f"...hi, I am {self.name}"
 
-            self.firebase_obj.put('/', child, data)
+            self.firebase_obj.post(child, data)
+            # self.firebase_obj.put('/', child, data)
             # return self.pull(child = '/')
 
         else:
