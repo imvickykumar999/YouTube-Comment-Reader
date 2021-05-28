@@ -4,7 +4,7 @@
 # https://stackoverflow.com/questions/1802971/nameerror-name-self-is-not-defined
 
 # import json
-from datetime import datetime
+# from datetime import datetime
 # import socket
 
 # print("Your Computer Name is:" + hostname)
@@ -34,14 +34,14 @@ class vicks:
         return self.link, self.name
 
     def pull(self,
-             child = None):
+             child = 'Group/Chat'):
 
         if self.password == '@Hey_Vicks':
-            dt = datetime.now()
-            d = str(dt).split()[0]
-
-            if child == None:
-                child = f'Group/Chat/{d}'
+            # dt = datetime.now()
+            # d = str(dt).split()[0]
+            #
+            # if child == None:
+            #     child = f'Group/Chat/{d}'
 
             result = self.firebase_obj.get(f'{child}', None)
             return result
@@ -55,12 +55,13 @@ class vicks:
                    child = None):
 
         if self.password == '@Hey_Vicks':
-            dt = datetime.now()
-            d = str(dt).split()[0]
-            t = str(dt).split()[1].split('.')[0]
+            # dt = datetime.now()
+            # d = str(dt).split()[0]
+            # t = str(dt).split()[1].split('.')[0]
 
             if child == None:
-                child = f"Group/Chat/{d}/{t}@{self.name}"
+                child = f"Group/Chat/@{self.name}"
+                # child = f"Group/Chat/{d}/{t}@{self.name}"
 
             if data == None:
                 data = f"...hi, I am {self.name}"
