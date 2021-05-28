@@ -163,7 +163,7 @@ def converted_report():
 @app.route("/firechat")
 def firechat():
 
-    from multivicks import crud
+    from vicks import crud
     obj1 = crud.vicks('@Hey_Vicks')
 
     data = obj1.pull('Group/Chat')
@@ -174,7 +174,7 @@ def firechat():
 
 @app.route('/converted_firechat', methods=['POST'])
 def converted_firechat():
-    from multivicks import crud
+    from vicks import crud
 
     credentials = request.form['credentials']
     person = request.form['person']
@@ -191,7 +191,7 @@ def converted_firechat():
     else:
         obj1.push(message)
 
-    data = obj1.pull()
+    data = obj1.pull('Group/Chat')
     return render_template("firechat.html",
                            data = data,
                            )
