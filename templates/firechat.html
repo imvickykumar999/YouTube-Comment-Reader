@@ -66,7 +66,7 @@
 
       <p>
         <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-          Show Messages
+          Click me to See Messages
         </a>
       </p>
 
@@ -75,27 +75,39 @@
       <div class="collapse" id="collapseExample">
         <div class="card card-body">
 
-          <div class="jumbotron jumbotron-fluid">
+          <!-- <div class="jumbotron jumbotron-fluid"> -->
             <div class="container">
               <h3>
 
                 {% for key, values in data.items() %}
-                <div class="alert alert-primary" role="alert">
+                  <p>
+                    <a class="btn btn-primary" data-toggle="collapse" href="#{{key}}" role="button" aria-expanded="false" aria-controls="{{key}}">
+                      {{key}}
+                    </a>
+                  </p>
 
-                  <div class="alert alert-danger" role="alert">
-                    {{values.split(' => ')[0]}}
+                  <div class="collapse" id="{{key}}">
+                    <div class="card card-body">
+
+                      <div class="alert alert-primary" role="alert">
+
+                        <div class="alert alert-danger" role="alert">
+                          {{values.split(' => ')[0]}}
+                        </div>
+
+                        <div class="alert alert-warning" role="alert">
+                          {{values.split(' => ')[1]}}
+                        </div>
+
+                      </div>
+
+                    </div>
                   </div>
-
-                  <div class="alert alert-warning" role="alert">
-                    {{values.split(' => ')[1]}}
-                  </div>
-
-                </div>
                 {% endfor %}
 
               </h3>
             </div>
-          </div>
+          <!-- </div> -->
 
         </div>
       </div>
