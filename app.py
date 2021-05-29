@@ -236,6 +236,12 @@ def converted_vickstube():
             "Sorry...": ["Comments are not Visible !"],
         }
 
+    wanna_download = request.form['ytdownload']
+
+    if wanna_download == "1":
+        from vicks import ytdownload as ytd
+        ytd.yt_video(vid)
+
     return render_template("ytc.html",
                             dict=com,
                             vid=vid)
