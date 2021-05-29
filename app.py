@@ -6,6 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 import requests, os
 
 from bs4 import BeautifulSoup as bs
+from youtube_search import YoutubeSearch
 
 from vicks.encrypt import encryptpdf as enc
 from flask import Flask, flash, url_for, session, request, redirect, render_template, send_from_directory
@@ -216,18 +217,27 @@ def converted_vickstube():
     url = request.form['ytc']
     s = url.split('/')
 
-    if s[2] == 'www.youtube.com':
-        vid = s[3].split('=')[1].split('?')[0]
-    elif s[2] == 'youtu.be':
-        vid = s[3].split('?')[0]
+    if s[0] != 'https:':
+        vid = YoutubeSearch(s[0], max_results = 1).to_dict()[-1]['id']
     else:
-        vid = 'Cpc_rHf1U6g'
-        print("Sorry... Code couldn't be extracted !!!")
+        if s[2] == 'www.youtube.com':
+            vid = s[3].split('=')[1].split('?')[0]
+        elif s[2] == 'youtu.be':
+            vid = s[3].split('?')[0]
+        else:
+            vid = 'Cpc_rHf1U6g'
+            print("Sorry... Code couldn't be extracted !!!")
 
-    dict = ytc.comments(vid)
+    try:
+        com = ytc.comments(vid)
+    except:
+        com = {
+            "...are": ["Disabled by user !"],
+            "Sorry...": ["Comments are not Visible !"],
+        }
 
     return render_template("ytc.html",
-                            dict=dict,
+                            dict=com,
                             vid=vid)
 
 @app.errorhandler(404)
